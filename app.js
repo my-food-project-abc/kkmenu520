@@ -1,10 +1,13 @@
-const SUPABASE_URL = "https://lnkfgggohxqccqghvpcq.supabase.co";
-const SUPABASE_KEY = "sb_publishable_0xqUP0CY4NnerWMYxPCXAg_uUX4MyfL";
+// 只改这里！别的都不动！
+const SUPABASE_URL = "https://lnkfggohxqccghvpqck.supabase.co";
+const SUPABASE_KEY = "sb_publishable_0xqUP8CY4NnerWMyXPCXAg_uUX4MyfL";
 const PASSWORD = "521pphn";
 
-// 初始化 Supabase
 const { createClient } = supabase;
 const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+
+
 
 // 菜单列表
 const menuData = [
