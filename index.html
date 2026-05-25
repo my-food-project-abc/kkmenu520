@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>困困的菜单</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🐧🌸 今日菜单</h1>
+    <div class="menu-list" id="menuList"></div>
+
+    <div class="cart-box">
+      <h3>🛒 已选项目</h3>
+      <div id="cartList"></div>
+    </div>
+
+    <button class="submit-btn" onclick="submitWithPassword()">提交订单（需口令）</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

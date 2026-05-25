@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "微软雅黑", sans-serif;
+}
+
+body {
+  background: #f9f9f9;
+  padding: 25px;
+}
+
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #aaeae8;
+  font-size: 24px;
+}
+
+.menu-item {
+  padding: 16px 18px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background: #f8f9ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #f1f1f1;
+}
+
+.menu-item:hover {
+  background: #e0f7fa;
+  border-color: #ffcccc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 107, 107, 0.1);
+}
+
+.menu-item.active {
+  background: linear-gradient(135deg, #81d4fa, #64b5f6);
+  color: #fff;
+  border-color: #ffaed2;
+  font-weight: bold;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(129, 212, 250, 0.3);
+}
+
+.cart-box {
+  margin-top: 35px;
+  padding-top: 20px;
+  border-top: 8px solid #f7f8fa;
+}
+
+.cart-box h3 {
+  font-size: 17px;
+  color: #1a1a1a;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.cart-box h3::before {
+  content: '';
+  width: 4px;
+  height: 16px;
+  background: #ff6b6b;
+  border-radius: 2px;
+  margin-right: 8px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 12px;
+  margin-bottom: 8px;
+  background: #b7e2c9;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #333;
+}
+
+.del-btn {
+  color: #ff6b6b;
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #ffdddd;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.del-btn:hover {
+  background: #ff6b6b;
+  color: #fff;
+  border-color: #f8e9e9;
+}
+
+.empty-tip {
+  text-align: center;
+  padding: 20px 0;
+  color: #999;
+  font-size: 16px;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px 0;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f7a0c1, #ff8eb9);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 107, 107, 0.25);
+}
