@@ -1,13 +1,8 @@
-// 只改这里！别的都不动！
-const SUPABASE_URL = "https://lnkfggohxqccghvpqck.supabase.co";
-const SUPABASE_KEY = "sb_publishable_0xqUP8CY4NnerWMyXPCXAg_uUX4MyfL";
-const PASSWORD = "521pphn";
+const supabaseUrl = "https://noisy-bird-14c5.3404448238.workers.dev";
+const supabaseAnonKey = "sb_publishable_0xqUP0CY4NnerWMYxPCXAg_uUX4MyfL";
 
 const { createClient } = supabase;
-const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
-
-
-
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 // 菜单列表
 const menuData = [
