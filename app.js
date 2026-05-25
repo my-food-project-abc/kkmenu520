@@ -1,10 +1,16 @@
+
 const supabaseUrl = "https://noisy-bird-14c5.3404448238.workers.dev";
 const supabaseAnonKey = "sb_publishable_0xqUP0CY4NnerWMYxPCXAg_uUX4MyfL";
 
 const { createClient } = supabase;
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-// 菜单列表
+
+const PASSWORD = "5201314";
+
+// ==========================================
+// 菜单
+// ==========================================
 const menuData = [
   "🍓 生气套餐",
   "🍰 下单一份奶茶 自选品牌",
@@ -20,7 +26,9 @@ let cart = [];
 const menuList = document.getElementById("menuList");
 const cartList = document.getElementById("cartList");
 
+// ==========================================
 // 渲染菜单
+// ==========================================
 menuData.forEach(item => {
   let div = document.createElement("div");
   div.className = "menu-item";
@@ -37,7 +45,9 @@ menuData.forEach(item => {
   menuList.appendChild(div);
 });
 
+// ==========================================
 // 渲染购物车
+// ==========================================
 function renderCart() {
   cartList.innerHTML = "";
   if (cart.length === 0) {
@@ -59,7 +69,9 @@ function renderCart() {
   });
 }
 
+// ==========================================
 // 密码验证
+// ==========================================
 function submitWithPassword() {
   if (cart.length === 0) {
     alert("你还什么都没有选不能提交哦");
@@ -74,19 +86,22 @@ function submitWithPassword() {
   submitOrder();
 }
 
-// 提交订单到 Supabase
+// ==========================================
+// 提交订单（已修复）
+// ==========================================
 async function submitOrder() {
-  const { error } = await supabaseClient
+  const { error } = await supabase
     .from("orders")
     .insert([
       {
-        items: cart,
+        items: cart.join(" | "),
         time: new Date().toLocaleString()
       }
     ]);
 
   if (error) {
     alert("下单失败：" + error.message);
+    console.error(error);
   } else {
     alert("✅ 下单成功！");
     cart = [];
@@ -95,5 +110,7 @@ async function submitOrder() {
   }
 }
 
-// 启动页面
+// ==========================================
+// 启动
+// ==========================================
 renderCart();
