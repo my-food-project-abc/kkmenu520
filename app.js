@@ -1,6 +1,5 @@
-
-const SUPABASE_URL = "https://adkwpdclxhfhlkzxleqo.supabase.co";
-const SUPABASE_KEY = "sb_publishable_uOs8mXA-_KdJ_hpTPsQwJg_rcMVWhxw";
+const SUPABASE_URL = "https://lnkfgggohxqccqghvpcq.supabase.co";
+const SUPABASE_KEY = "sb_publishable_0xqUP0CY4NnerWMYxPCXAg_uUX4MyfL";
 const PASSWORD = "521pphn";
 
 // 初始化 Supabase
