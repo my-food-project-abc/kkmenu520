@@ -9,17 +9,20 @@
 </head>
 <body>
 
-  <div class="container">
-    <h1>🐧🌸 今日菜单</h1>
-    <div class="menu-list" id="menuList"></div>
+<div class="container">
+  <h1>🐧🌸 今日菜单</h1>
 
-    <div class="cart-box">
-      <h3>🛒 已选项目</h3>
-      <div id="cartList"></div>
-    </div>
+  <!-- 菜单容器（只保留一个） -->
+  <div class="menu-list" id="menuList"></div>
 
-    <button class="submit-btn" onclick="submitWithPassword()">提交订单（需口令）</button>
+  <!-- 购物车容器（只保留一个） -->
+  <div class="cart-box">
+    <h3>🛒 已选项目</h3>
+    <div id="cartList"></div>
   </div>
+
+  <button onclick="submitWithPassword()">提交订单（需口令）</button>
+</div>
 
   <script src="app.js"></script>
 </body>
