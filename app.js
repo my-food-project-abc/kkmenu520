@@ -1,16 +1,13 @@
 
-const supabaseUrl = "https://noisy-bird-14c5.3404448238.workers.dev";
-const supabaseAnonKey = "sb_publishable_0xqUP0CY4NnerWMYxPCXAg_uUX4MyfL";
+const SUPABASE_URL = "https://lnkfgggohxqccqghvpcq.supabase.co";
+const SUPABASE_KEY = "sb_publishable_0xqUP0CY4NnerWMYxPCXAg_uUX4MyfL";
+const PASSWORD = "521pphn";
 
+// 初始化 Supabase
 const { createClient } = supabase;
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-
-const PASSWORD = "5201314";
-
-// ==========================================
-// 菜单
-// ==========================================
+// 菜单列表
 const menuData = [
   "🍓 生气套餐",
   "🍰 下单一份奶茶 自选品牌",
@@ -26,9 +23,7 @@ let cart = [];
 const menuList = document.getElementById("menuList");
 const cartList = document.getElementById("cartList");
 
-// ==========================================
 // 渲染菜单
-// ==========================================
 menuData.forEach(item => {
   let div = document.createElement("div");
   div.className = "menu-item";
@@ -45,9 +40,7 @@ menuData.forEach(item => {
   menuList.appendChild(div);
 });
 
-// ==========================================
 // 渲染购物车
-// ==========================================
 function renderCart() {
   cartList.innerHTML = "";
   if (cart.length === 0) {
@@ -69,9 +62,7 @@ function renderCart() {
   });
 }
 
-// ==========================================
 // 密码验证
-// ==========================================
 function submitWithPassword() {
   if (cart.length === 0) {
     alert("你还什么都没有选不能提交哦");
@@ -86,22 +77,19 @@ function submitWithPassword() {
   submitOrder();
 }
 
-// ==========================================
-// 提交订单（已修复）
-// ==========================================
+// 提交订单到 Supabase
 async function submitOrder() {
-  const { error } = await supabase
+  const { error } = await supabaseClient
     .from("orders")
     .insert([
       {
-        items: cart.join(" | "),
+        items: cart,
         time: new Date().toLocaleString()
       }
     ]);
 
   if (error) {
     alert("下单失败：" + error.message);
-    console.error(error);
   } else {
     alert("✅ 下单成功！");
     cart = [];
@@ -110,7 +98,5 @@ async function submitOrder() {
   }
 }
 
-// ==========================================
-// 启动
-// ==========================================
+// 启动页面
 renderCart();
